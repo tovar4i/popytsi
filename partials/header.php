@@ -3,12 +3,12 @@
     session_start();
 ?>
 
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html class="no-js" lang="ua">
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8">
+    <title>POPYTSI</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
 
 
     <meta name="theme-color" content="#fafafa">

@@ -4,8 +4,4 @@
     $_SESSION["user_id"] = NULL;
     header("Location: /");
   }
-
-
-
-
 ?>
