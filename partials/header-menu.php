@@ -14,33 +14,33 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
             <div class="container">
                 <ul class="menu">
                     <li class="menu__item shedule">
-                        <img src="assets/icons/clock.png" alt="clock">
+                        <img src="/assets/icons/clock.png" alt="clock">
                         <p>Працюємо <br>
                             з 10:00 до 21:30</p>
                     </li>
                     <li class="menu__item">
-                        <img src="assets/icons/phone.png" alt="phone">
+                        <img src="/assets/icons/phone.png" alt="phone">
                         <a href="tel:380673633366" class="menu__link">(067)3633366</a>
                     </li>
                     <li class="menu__item">
-                        <img src="assets/icons/email.png" alt="mail">
+                        <img src="/assets/icons/email.png" alt="mail">
                         <a href="mailto:popitsy@gmail.com" class="menu__link">popitsy@gmail.com</a>
                     </li>
                     <li class="menu__item">
-                        <img src="assets/icons/place.png" alt="placeholder">
+                        <img src="/assets/icons/place.png" alt="placeholder">
                         <a href="#" class="menu__link">Наша адреса</a>
                     </li>
                     <li class="menu__item menu__social">
-                        <a href="#2" class="menu__link"><img src="assets/icons/insta.png" alt="instagram link"></a>
+                        <a href="#2" class="menu__link"><img src="/assets/icons/insta.png" alt="instagram link"></a>
 
-                        <a href="#1" class="menu__link"><img src="assets/icons/facebook.png" alt="facebook link"></a>
+                        <a href="#1" class="menu__link"><img src="/assets/icons/facebook.png" alt="facebook link"></a>
                     </li>
                     <li class="menu__item">
                         <a href="#" class="menu__link">Реєстрація</a>
                     </li>
                     <li class="menu__item menu__signin">
                         <a href="/modal/login.php" class="menu__link">Вхід</a>
-                        <img src="assets/icons/sign-in.png" alt="sign-in" class="signin">
+                        <img src="/assets/icons/sign-in.png" alt="sign-in" class="signin">
 
                     </li>
                 </ul>
@@ -59,7 +59,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
                 <div class="products">
                     <div class="subheader__logo">
                         <a href="#">
-                            <img src="assets/icons/logo.png" alt="">
+                            <img src="/assets/icons/logo.png" alt="">
                             <p>POPYTSI
                                 <br><span> "Вмажемо по пицці?!"</span>
                             </p>
@@ -67,22 +67,22 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
                     </div>
 
                     <div class="food">
-                        <img src="assets/icons/piza.png" alt="piza">
+                        <img src="/assets/icons/piza.png" alt="piza">
                         <a href="#">Піца</a>
                     </div>
 
 
                     <div class="food">
-                        <img src="assets/icons/salad.png" alt="salad">
+                        <img src="/assets/icons/salad.png" alt="salad">
                         <a href="#">Салати</a>
                     </div>
                     <div class="food">
-                        <img src="assets/icons/potables.png" alt="potable">
+                        <img src="/assets/icons/potables.png" alt="potable">
                         <a href="#">
                             Напої</a>
                     </div>
                     <div class="food">
-                        <img src="assets/icons/dessert.png" alt="potable">
+                        <img src="/assets/icons/dessert.png" alt="potable">
                         <a href="#">
                             Десерти</a>
                     </div>
@@ -96,7 +96,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
                     </div>
                     <div class="cart">
                         <a href="#">
-                            <img src="assets/icons/cart.png" alt="cart">
+                            <img src="/assets/icons/cart.png" alt="cart">
                         </a>
                     </div>
                 </div>

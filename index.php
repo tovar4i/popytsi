@@ -22,7 +22,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
         <div class="offers__container">
             <div class="card">
                 <div class="card__container">
-                    <img src="assets/img/products/pizza/pizza_rancho.png" alt="pizza_rancho">
+                    <img src="/assets/img/products/pizza/pizza_rancho.png" alt="pizza_rancho">
 
                     <div class="card__description">
                         <h4 class="card__title">Ранчо</h4>
@@ -38,7 +38,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
 
             <div class="card">
                 <div class="card__container">
-                    <img src="assets/img/products/pizza/pizza_4cheeses.png" alt="pizza_4cheeses">
+                    <img src="/assets/img/products/pizza/pizza_4cheeses.png" alt="pizza_4cheeses">
                     
                     <div class="card__description">
                         <h4 class="card__title">4 сира</h4>
@@ -53,7 +53,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
 
             <div class="card">
                 <div class="card__container">
-                    <img src="assets/img/products/pizza/pizza_vegano.png" alt="pizza_vegano">
+                    <img src="/assets/img/products/pizza/pizza_vegano.png" alt="pizza_vegano">
                     <div class="card__description">
                         <h4 class="card__title">Вегано</h4>
                         <p class="card__subtitle">Тісто, соус томатний, сир моцарела, броколі, перець болгарський, цибуля синя, маслини, рукола.</p>
@@ -74,10 +74,3 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer-site.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer.php");
 ?>
-<!-- @tasita: 
-те ж саме зробила і тут - перевір чи все є в футері php на всяк випадок і видали це-->
-<!-- <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/burger.js"></script>
-</body>
-
-</html> -->
