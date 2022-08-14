@@ -42,6 +42,8 @@ body {
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    color: rgb(0, 0, 0);
+    background:#fff;
 }
 
 input,
@@ -80,20 +82,6 @@ img {
     vertical-align: top;
 }
 
-h1,h2,
-h3,h4,
-h5,h6 {
-    
-}
-
-
-
-
-body {
-	line-height: 1;
-	color: rgb(0, 0, 0);
-    background:#fff;
-}
 .wrapper {
 	min-height: 100%;
 	overflow: hidden;
