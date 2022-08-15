@@ -28,7 +28,7 @@
                     $sql = "SELECT * FROM `users`";
                     $result = mysqli_query($conn, $sql);
                     $user = $result->fetch_assoc();
-                    if($user['role'] = "admin") {
+                    if($user['role'] == "admin") {
                 ?>
                 <!-- Button for Admin -->
                 <button class="btnLog-admin" type="button" onclick="window.location.href='/admin'">ПіцАдмінКа</button> 
