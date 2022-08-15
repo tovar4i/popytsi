@@ -25,9 +25,10 @@
             <li>
                 <?php 
                 if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
-                    $sql = "SELECT * FROM `users`";
+                    $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
                     $result = mysqli_query($conn, $sql);
                     $user = $result->fetch_assoc();
+
                     if($user['role'] == "admin") {
                 ?>
                 <!-- Button for Admin -->
