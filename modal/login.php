@@ -2,10 +2,13 @@
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
 ?>
 
-<!-- Button to open the modal login form -->
-<button class="btnLog-in-out" onclick="document.getElementById('modalWindowLogin').style.display='block'">Вхід <i class="icon-sign-in"></i></button>
+
 <!-- Button for Admin -->
 <button class="btnLog-admin" onclick="window.location.href='/admin'">ПіцАдмінКа</button>
+
+<!-- Button to open the modal login form -->
+<button class="btnLog-in-out" onclick="document.getElementById('modalWindowLogin').style.display='block'">Вхід <i class="icon-sign-in"></i></button>
+
 <!-- Button for log-out -->
 <button class="btnLog-in-out" onclick="window.location.href='/modal/logout.php'">Вихід <i class="icon-sign-out"></i></button>
 
@@ -53,6 +56,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
         </div>
     </form>
 </div>
+
+
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer.php");
 ?>

@@ -10,6 +10,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
 
     <!-- header -->
     <header>
+        <?php
+        require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
+        ?>
         <nav>
             <div class="container">
                 <ul class="menu">
