@@ -87,9 +87,30 @@
     background-color: #fefefe;
     margin: 2em auto;           /* 15% from the top and centered */
     border-radius: 0.5em;
-    
 }
 
+.modal h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    line-height: 1.5em;
+}
+.modal h4 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+.modal p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: justify;
+}
 /* The Close Button */
 .close {
     /* Position it in the top right corner outside of the modal */

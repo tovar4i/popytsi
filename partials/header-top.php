@@ -22,7 +22,7 @@
                 <a href="#1" class="menu__link"><img src="/assets/icons/facebook.svg" alt="facebook link"></a>
             </li>
             
-            <li>
+            <li >
                 <?php 
                 if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
                     $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
@@ -65,26 +65,48 @@
             <span onclick="document.getElementById('modalWindowLogin').style.display='none'" class="close" title="">&times;</span>
             <img src="../assets/icons/logo.png" class="logo-avatar">
             <h3>Вхід на сайт</h3>
-            <p>Ще не зареєстрований?<br /></p>
+            <h4>Ще не зареєстрований?<br /></h4>
             <!-- Button to open the modal login form -->
             <button  class="btnRegister" onclick="document.getElementById('modalWindowRegisret').style.display='block'">Реєстрація</i></button>
 
             <div class="notification">
                 <p>
                     <?php
-                    if (!empty($_POST)) {
-                        $sql = "SELECT * FROM `users` 
-                WHERE `email` = '" . $_POST['email'] . "' 
-                AND `password` = '" . $_POST['password'] . "'
-                ";
-                        $result = mysqli_query($conn, $sql);
-                        $user = $result->fetch_assoc();
-                        if ($user) {
-                            $_SESSION["user_id"] = $user['id'];
-                            header("Location: /");
-                        } else {
-                            $_SESSION["user_id"] = null;
-                            echo 'Заповніть вірно свої дані, <br> вказані при реєстрації!';
+                    if (isset($_REQUEST['LOG'])) {
+                        if (!empty($_POST)) {
+                            $sql = "SELECT * FROM `users` 
+                            WHERE `email` = '" . $_POST['email'] . "' 
+                            AND `password` = '" . $_POST['password'] . "'
+                            ";
+                            $result = mysqli_query($conn, $sql);
+                            $user = $result->fetch_assoc();
+                            if ($user) {
+                                $_SESSION["user_id"] = $user['id'];
+                                header("Location: /");
+                            } else {
+                                /*Проверяем существует ли у нас такой пользователь в БД*/
+                                $sql = "SELECT `email` FROM `users` WHERE `email` = '" . $_POST['email'] . "'";
+                                $result = mysqli_query($conn, $sql);
+                                $rows = $result->fetch_assoc();
+                                /*Если существует такой пользователь в БД то выдаем сообщение*/
+                                if($rows <= 0) {
+                                ?>
+                                <script>
+                                    document.getElementById('modalWindowLogin').style.display = 'block';
+                                </script>
+                                <?php
+                                echo 'e-mail: '. $_POST['email'] .' ще не зареєстрований! <br> Перейдіть до реєстрації'; 
+                                } else {
+                                ?>
+                                <script>
+                                    document.getElementById('modalWindowLogin').style.display = 'block';
+                                </script>
+                                <?php
+
+                                $_SESSION["user_id"] = null;
+                                echo 'Не вірно введений пароль, <br> вказаний при реєстрації!';
+                                }
+                            }
                         }
                     }
                     ?>
@@ -94,7 +116,7 @@
             <input type="email" name="email" placeholder="Ваш email" required>
             <input type="password" name="password" placeholder="Пароль" required>
 
-            <button class="btnEnter" type="submit">Увійти</button>
+            <button class="btnEnter" name="LOG" type="submit">Увійти</button>
             <p>Продовжуючи, ви погоджуєтесь зі збором та обробкою персональних даних та користувальницькою угодою.</p>
         </div>
     </form>
@@ -109,23 +131,63 @@
             <span onclick="document.getElementById('modalWindowRegisret').style.display='none'" class="close" title="">&times;</span>
             <img src="../assets/icons/logo.png" class="logo-avatar">
             <h3>Реєстрація</h3>
-            <p>Вже зареєстрований?<br /></p>
+            <h4>Вже зареєстрований?<br /></h4>
             <button  class="btnRegister" onclick="document.getElementById('modalWindowRegisret').style.display='none'">Увійти</i></button>
             <div class="notification">
                 <p>
 
                     <?php
-                    if (!empty($_POST)) {
-                        echo $_POST['username'] . " - " . " - " . $_POST['phone'];
+                    if (isset($_REQUEST['REG'])) {
+                    /*Проверяем существует ли у нас такой пользователь в БД*/
+                    $sql = "SELECT `email` FROM `users` WHERE `email` = '" . $_POST['email'] . "'";
+                    $result = mysqli_query($conn, $sql);
+                    $rows = $result->fetch_assoc();
+                    /*Если существует такой пользователь в БД то выдаем сообщение*/
+                    if($rows > 0) {
+                        ?>
+                        <script>
+                            document.getElementById('modalWindowRegisret').style.display = 'block';
+                        </script>
+                        <?php
+                        echo 'email: '. $_POST['email'] .' вже зареєстрований!'; 
+                    } 
+                    /*Если не существует такой пользователь в БД то проверяем совпадение пароля и повтора пароля*/
+                    else if ($_REQUEST['password'] !== $_REQUEST['password_rep']) {
+                        ?>
+                        <script>
+                            document.getElementById('modalWindowRegisret').style.display = 'block';
+                        </script>
+                        <?php
+                        echo 'Пароль не збігається';
+                        }  
+                    /*Если не существует такой пользователь в БД и есть совпадение пароля и повтора пароля,
+                    то идёт создание новой записи в БД о новом пользователе*/
+                        else if (!empty($_POST)) {
+                        // echo $_POST['username'] . " - " . " - " . $_POST['phone'];
                         $sql = "INSERT INTO `users` (`username`, `email`, `password`, `phone`) VALUES ('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $_POST['password'] . "', '" . $_POST['phone'] . "');";
                         if (mysqli_query($conn, $sql)) {
-                            echo "Ви успішно зареєстровані<br/>";
-                            header('Refresh: 3; URL=/modal/login.php');
-                            echo 'Через 5 секунд Ви будете <br> автоматично перенаправлені до входу в особистий кабінет!';
-                        } else {
-                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                            ?>
+                        <script>
+                            document.getElementById('modalWindowRegisret').style.display = 'none';
+                            window.location.href=window.location.href.slice(0, -1);
+                        </script>
+                        <?php
+                            $sql = "SELECT * FROM `users` 
+                            WHERE `email` = '" . $_POST['email'] . "' 
+                            AND `password` = '" . $_POST['password'] . "'
+                            ";
+                            $result = mysqli_query($conn, $sql);
+                            $user = $result->fetch_assoc();
+                            if ($user) {
+                                $_SESSION["user_id"] = $user['id'];
+                                ?>
+                                <script>
+                                    window['location']['reload']();
+                                </script>
+                                <?php
+                            }
                         }
-                        mysqli_close($conn);
+                         }
                     }
                     ?>
                 </p>

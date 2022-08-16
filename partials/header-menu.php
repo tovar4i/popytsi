@@ -14,7 +14,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
         require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
         ?>
         <nav>
-            <div class="container">
+            <!-- <div class="container">
                 <ul class="menu">
                     <li class="menu__item shedule">
                         <img src="/assets/icons/clock.png" alt="clock">
@@ -46,7 +46,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
                         <img src="/assets/icons/sign-in.png" alt="sign-in" class="signin">
 
                     </li>
-                </ul>
+                </ul> -->
 
                 <div class="hamburger">
                     <span></span>
@@ -93,8 +93,22 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
                     <div class="greeting">
                         <p greeting__title>Привіт,
                             <br>
-                            <span class="username">неавторизований візітер</span>
-                            !
+<?php
+if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
+                    $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
+                    $result = mysqli_query($conn, $sql);
+                    $user = $result->fetch_assoc();
+?>
+<span class="username"> <?php echo $user["username"] ?>!</span>
+<?php
+} else {
+?>
+<span class="username">гість!</span>
+
+<?php
+}
+?>
+
                         </p>
                     </div>
                     <div class="cart">
