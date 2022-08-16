@@ -39,20 +39,21 @@
     <hr class="sidebar-divider d-none d-md-block">
 
     <li class="nav-item">
-        <a class="nav-link" href="/admin/.php">
+        <a class="nav-link" href="/admin/orders.php">
             <span>Замовлення</span></a>
     </li>
   
+   
+
     <li class="nav-item">
-        <a class="nav-link" href="/admin/.php">
+        <a class="nav-link" href="/admin/dishes.php">
+            <span>Каталог страв</span></a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/ingredients.php">
             <span>Інгредієнти</span></a>
     </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="/admin/.php">
-            <span>Найменування</span></a>
-    </li>
-
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
