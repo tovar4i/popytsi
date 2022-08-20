@@ -33,7 +33,7 @@
                     <?php 
                         // виводимо всі дані окрім того, чия зараз сессія (адміна)
                         $sql = "SELECT * FROM users WHERE id !=" . $userID;
-                        $result = mysqli_query($conn, $sql); 
+                        $result = mysqli_query($connect, $sql); 
                         // var_dump($result);
                         while($row = $result->fetch_assoc()) // отримуємо всі рядки в циклі по одному
                         {
