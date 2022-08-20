@@ -20,7 +20,35 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
 
         <?php
 
-        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id;");
+        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 3;");
+
+        $catalogs = mysqli_fetch_all($catalogs);
+
+        foreach ($catalogs as $catalogs) {
+        ?>
+        <div class="offers-container">
+            <div class="card">
+                <div class="card-container">
+                <img src="\assets\img\products\<?= $catalogs[5] ?>" >
+
+                    <div class="card-description">
+                        <h4 class="card-title"><?= $catalogs[1] ?></h4>
+                        <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
+                        <p class="card-weight">Вага:<?= $catalogs[4] ?> г</p>
+                        <p class="card-price"><?= $catalogs[3] ?> грн</p>
+                    </div>
+                </div>
+
+                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $catalogs[0] ?>">
+                                    <i class="fas fa-cart-arrow-down"></i> замовити </a>
+                <?php
+        }
+        ?>
+
+
+        <!-- <?php
+
+        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id ;");
 
         $catalogs = mysqli_fetch_all($catalogs);
 
@@ -43,7 +71,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 </div>
             <?php
         }
-            ?>
+            ?> -->
+
+
             </div>
     </div>
 </section>
@@ -56,53 +86,32 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <div class="underline"> </div>
             </div>
 
-            <div class="offers-container">
-                <div class="card">
-                    <div class="card-container">
-                        <div class="card-description">
-                            <h4 class="card-title">Цезар
-                                з лососем</h4>
-                            <p class="card-subtitle">Салат айсберг, помідори чері, перепелині яйця, сухарики, лосось,
-                                соус
-                                цезар, сир пармезан.</p>
-                            <p class="card-weight">Вага: 350 г</p>
-                            <p class="card-price">180 ₴</p>
-                        </div>
+            <?php
+
+        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 3;");
+
+        $catalogs = mysqli_fetch_all($catalogs);
+
+        foreach ($catalogs as $catalogs) {
+        ?>
+        <div class="offers-container">
+            <div class="card">
+                <div class="card-container">
+                <img src="\assets\img\products\<?= $catalogs[5] ?>" >
+
+                    <div class="card-description">
+                        <h4 class="card-title"><?= $catalogs[2] ?></h4>
+                        <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
+                        <p class="card-weight">Вага:<?= $catalogs[4] ?> г</p>
+                        <p class="card-price"><?= $catalogs[3] ?> грн</p>
                     </div>
-                    <img class="card-image" src="/assets/img/products/salat_tsezar_z_lososem.jpg"
-                        alt="salat_tsezar_z_lososem">
-                    <button class="add-cart">Додати у кошик</button>
                 </div>
-                <div class="card">
-                    <div class="card-container">
-                        <div class="card-description">
-                            <h4 class="card-title">Цезар
-                                з куркою</h4>
-                            <p class="card-subtitle">Салат айсберг, помідори чері, перепелині яйця, сухарики, смажене
-                                куряче
-                                філе, фірмовий соус цезар, сир пармезан.</p>
-                            <p class="card-weight">Вага: 350 г</p>
-                            <p class="card-price">180 ₴</p>
-                        </div>
-                    </div>
-                    <img class="card-image" src="/assets/img/products/salat_tsezar_z_kurkoyu.jpg"
-                        alt="salat_tsezar_z_kurkoyu">
-                    <button class="add-cart">Додати у кошик</button>
-                </div>
-                <div class="card">
-                    <div class="card-container">
-                        <div class="card-description">
-                            <h4 class="card-title">Салат
-                                з вугрем</h4>
-                            <p class="card-subtitle">Салат айсберг, вугор, авокадо, помідори чері, кунжут, соус унагі.
-                            </p>
-                            <p class="card-weight">Вага: 350 г</p>
-                            <p class="card-price">180 ₴</p>
-                        </div>
-                    </div>
-                    <img class="card-image" src="/assets/img/products/salat_ z_vugrem.jpg" alt="salat_ z_vugrem">
-                    <button class="add-cart">Додати у кошик</button>
-                </div>
+
+                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $catalogs[0] ?>">
+                                    <i class="fas fa-cart-arrow-down"></i> замовити </a>
+                <?php
+        }
+        ?>
 
             </div>
 
@@ -116,7 +125,34 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <div class="underline"> </div>
             </div>
 
-            <div class="offers-container">
+            <?php
+
+        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 3;");
+
+        $catalogs = mysqli_fetch_all($catalogs);
+
+        foreach ($catalogs as $catalogs) {
+        ?>
+        <div class="offers-container">
+            <div class="card">
+                <div class="card-container">
+                <img src="\assets\img\products\<?= $catalogs[5] ?>" >
+
+                    <div class="card-description">
+                        <h4 class="card-title"><?= $catalogs[3] ?></h4>
+                        <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
+                        <p class="card-weight">Вага:<?= $catalogs[4] ?> г</p>
+                        <p class="card-price"><?= $catalogs[3] ?> грн</p>
+                    </div>
+                </div>
+
+                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $catalogs[0] ?>">
+                                    <i class="fas fa-cart-arrow-down"></i> замовити </a>
+                <?php
+        }
+        ?>
+
+            <!-- <div class="offers-container">
                 <div class="card">
                     <div class="card-container">
                         <div class="card-description">
@@ -192,7 +228,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                     <img class="card-image" src="/assets/img/products/drink_tomato_juice.png"
                         alt="tomato_juice">
                     <button class="add-cart">Додати у кошик</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -205,7 +241,34 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <div class="underline"> </div>
             </div>
 
-            <div class="offers-container">
+            <?php
+
+        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 3;");
+
+        $catalogs = mysqli_fetch_all($catalogs);
+
+        foreach ($catalogs as $catalogs) {
+        ?>
+        <div class="offers-container">
+            <div class="card">
+                <div class="card-container">
+                <img src="\assets\img\products\<?= $catalogs[5] ?>" >
+
+                    <div class="card-description">
+                        <h4 class="card-title"><?= $catalogs[1] ?></h4>
+                        <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
+                        <p class="card-weight">Вага:<?= $catalogs[4] ?> г</p>
+                        <p class="card-price"><?= $catalogs[3] ?> грн</p>
+                    </div>
+                </div>
+
+                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $catalogs[0] ?>">
+                                    <i class="fas fa-cart-arrow-down"></i> замовити </a>
+                <?php
+        }
+        ?>
+
+            <!-- <div class="offers-container">
                 <div class="card">
                     <div class="card-container">
                         <div class="card-description">
@@ -244,7 +307,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                     <img class="card-image" src="/assets/img/products/dessert_muffin_latte.jpg"
                         alt="muffin_latte">
                     <button class="add-cart">Додати у кошик</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

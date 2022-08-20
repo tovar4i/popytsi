@@ -298,7 +298,8 @@ nav{
     position: relative;
     z-index: -5;
 }
-
+.btn, 
+.btn-info btn-block add-to-cart,
 .add-cart {
     margin-top: 172px;
     width: 100%;
