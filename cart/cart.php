@@ -71,9 +71,6 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
 
 
 
-
-
-
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer-site.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer.php");

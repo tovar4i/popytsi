@@ -237,7 +237,7 @@ nav{
 }
 
 .cart :hover {
-    background: url('../icons/dessert-hover.png') center center/cover no-repeat;
+    background: url('../icons/cart-hover.png') center center/cover no-repeat;
     
 }
 
