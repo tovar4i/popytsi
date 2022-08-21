@@ -61,7 +61,8 @@
             </div>
             <div class="cart">
                 <a href="cart/cart.php">
-                    <img src="/assets/icons/cart.png" alt="cart">
+                    <!-- <img src="/assets/icons/cart.png" alt="cart"> -->
+                    <div class="cart-image"></div>
                 </a>
             </div>
         </div>

@@ -230,6 +230,17 @@ nav{
     padding-top: 15px;
 }
 
+.cart-image{
+    height: 42px;
+    width: 36px;
+    background: url('../icons/cart.png') center center/cover no-repeat;
+}
+
+.cart :hover {
+    background: url('../icons/dessert-hover.png') center center/cover no-repeat;
+    
+}
+
 /* promo_______________ */
 
 .promo {
