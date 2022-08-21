@@ -47,7 +47,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                     ?>
 
 
-                    <form class="user" action="/admin/modules/catalogs/vendor/edit_catalog.php" method="POST" enctype="multipart/form-data">
+                    <form class="user" action="vendor\edit_catalog.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $catalogs['id'] ?>">
                         
                         <div class="form-group"> 

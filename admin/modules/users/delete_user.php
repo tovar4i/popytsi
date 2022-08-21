@@ -1,5 +1,5 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/config/db.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/config/db.php');
 
 if(!empty($_GET)) {
     
