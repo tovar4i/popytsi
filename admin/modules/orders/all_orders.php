@@ -19,11 +19,12 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Ім'я користувача</th>
-                        <th>Телефон</th>
-                        <th>E-mail</th>
-                        <th>Роль</th>
-                        <th>Пароль</th>
+                        <th>Ім'я замовника</th>
+                        <!-- <th>Телефон замовника</th> -->
+                        <th>Перелік страв</th>
+                        <th>Сума замовлення</th>
+                        <th>Адреса</th>
+                        <th>Час</th>
                         <th>Опції</th>
                     </tr>
                 </thead>
@@ -32,7 +33,7 @@
 
                     <?php 
                         // виводимо всі дані окрім того, чия зараз сессія (адміна)
-                        $sql = "SELECT * FROM users WHERE id !=" . $userID;
+                        $sql = "SELECT * FROM final";
                         $result = mysqli_query($connect, $sql); 
                         // var_dump($result);
                         while($row = $result->fetch_assoc()) // отримуємо всі рядки в циклі по одному
@@ -41,14 +42,14 @@
 
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['phone']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['role']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
+                        <td><?php echo $row['id_users']; ?></td>
+                        <td><?php echo $row['id_composition']; ?></td>
+                        <td><?php echo $row['order_sum']; ?></td>
+                        <td><?php echo $row['address']; ?></td>
+                        <td><?php echo $row['time_now']; ?></td>
                         <td>
-                            <a class="btn btn-light" href="?page=edit_user&id=<?php echo $row['id']; ?>"><i class="fas fa-marker"></i>  Редагувати</a>
-                            <a class="btn btn-dark" href="/admin/modules/users/delete_user.php?id=<?php echo $row['id']; ?>">
+                            <a class="btn btn-light" href="?page=edit_order&id=<?php echo $row['id']; ?>"><i class="fas fa-marker"></i>  Редагувати</a>
+                            <a class="btn btn-dark" href="/admin/modules/users/delete_order.php?id=<?php echo $row['id']; ?>">
                             <i class="fas fa-trash-alt"></i>  Видалити</a>
                         </td>
                     </tr>

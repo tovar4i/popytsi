@@ -35,6 +35,12 @@
             <span>Користувачі</span></a>
     </li>
     
+    <li class="nav-item">
+        <a class="nav-link" id="navLinkOrder" href="/admin/orders.php">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span>Замовлення</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
