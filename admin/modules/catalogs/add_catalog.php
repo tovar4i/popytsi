@@ -88,6 +88,11 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                             <input type="number" class="form-control form-control-user" step="0.1" name="amount_catalog" required> 
                             <!-- <input type="number" class="form-control form-control-user" step="0.1" name="amount_catalog" value="<?= $product['amount_catalog'] ?>">  -->
                         </div>
+                        
+                        <div class="form-group">
+                            <p>Коментарі:</p>
+                            <input type="text" class="form-control form-control-user"  name="comments"  required> 
+                        </div>
 
                         <div class="form-group">
                             <p>Завантажити зображення:</p>

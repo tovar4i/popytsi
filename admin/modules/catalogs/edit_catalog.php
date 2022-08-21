@@ -83,9 +83,14 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
 
                         <div class="form-group">
                             <p>Вага (гр)/Об'єм (л):</p>
-                            <input type="number" class="form-control form-control-user" step="0.1" name="amount_catalog" value="<?= $article['amount_catalog'] ?>"> <br> <br> 
+                            <input type="number" class="form-control form-control-user" step="0.1" name="amount_catalog" value="<?= $article['amount_catalog'] ?>"> 
                         </div>
-
+                        
+                        <div class="form-group">
+                            <p>Коментарі:</p>
+                            <input type="text" class="form-control form-control-user"  name="comments" value="<?= $article['comments'] ?>"> 
+                        </div>
+                        
                         <div class="form-group">
                             <p>Завантажити зображення:</p>
                             <td><img src="/assets/img/products/<?= $article['imagename'] ?>" style="height: 50px; width: 50px;" ></td>

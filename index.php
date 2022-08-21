@@ -1,13 +1,12 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
 ?>
 
 
-
 <section class="promo">
     <div class="container">
-
     </div>
 </section>
 
@@ -19,17 +18,16 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
         </div>
 
         <?php
-
-        $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 3;");
-
-        $catalogs = mysqli_fetch_all($catalogs);
-
-        foreach ($catalogs as $catalogs) {
+            $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 1;");
+            $catalogs = mysqli_fetch_all($catalogs);
+            // var_dump($catalogs);
+            // die();
+            foreach ($catalogs as $catalogs) {
         ?>
         <div class="offers-container">
             <div class="card">
                 <div class="card-container">
-                <img src="\assets\img\products\<?= $catalogs[5] ?>" >
+                    <img src="/assets/img/products/<?= $catalogs[5] ?>" >
 
                     <div class="card-description">
                         <h4 class="card-title"><?= $catalogs[1] ?></h4>
@@ -37,13 +35,26 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                         <p class="card-weight">Вага:<?= $catalogs[4] ?> г</p>
                         <p class="card-price"><?= $catalogs[3] ?> грн</p>
                     </div>
+                
+                    <a href="?cart=add&id=<?= $catalogs[0] ?>" class="add-cart" data-id="<?= $catalogs[0] ?>"><i class="fas fa-cart-arrow-down"></i> Замовити </a>
+                    <?php
+                        }
+                    ?>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $catalogs[0] ?>">
-                                    <i class="fas fa-cart-arrow-down"></i> замовити </a>
-                <?php
-        }
-        ?>
+
+
+
+
+
+
+
+
+
 
 
         <!-- <?php
@@ -71,17 +82,17 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 </div>
             <?php
         }
-            ?> -->
+            ?> 
 
 
             </div>
     </div>
-</section>
+</section>-->
 
-<section class="offers">
+<section class="offers" id="salads">
         <div class="container">
 
-            <div class="title" id="salads">
+            <div class="title">
                 <h3>САЛАТИ</h3>
                 <div class="underline"> </div>
             </div>
@@ -116,9 +127,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
             </div>
 
         </div>
-    </section>
+</section>
 
-    <section class="offers" id="potables">
+<section class="offers" id="potables">
         <div class="container">
             <div class="title">
                 <h3>НАПОЇ</h3>
@@ -231,9 +242,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 </div> -->
             </div>
         </div>
-    </section>
+</section>
 
-    <section class="offers" id="deserts">
+<section class="offers" id="deserts" style= "display: none";>
         <div class="container">
 
             <div class="title">
@@ -310,9 +321,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 </div> -->
             </div>
         </div>
-    </section>
+</section>
 
-    <section class="about-us">
+<section class="about-us">
         <div class="container">
             <div class="title">
                 <h5>Про нашу піцу</h5>

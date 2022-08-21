@@ -49,6 +49,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                                     <th>Категорія</th>
                                     <th>Ціна (грн)</th>
                                     <th>Вага</th>
+                                    <th>Коментарі</th>
                                     <th>Фото</th>
                                     <th>Опції</th>
                                 </tr>
@@ -57,7 +58,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                             <tbody>
 
                                 <?php 
-                                    $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id;");
+                                    $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id;");
                                     $catalogs = mysqli_fetch_all($catalogs);
                                     foreach ($catalogs as $catalogs) {
                                 ?> 
@@ -68,7 +69,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                                     <td><?= $catalogs[2] ?></td>
                                     <td><?= $catalogs[3] ?></td>
                                     <td><?= $catalogs[4] ?> г</td>
-                                    <td><img src="/assets/img/products/<?= $catalogs[5] ?>" style="height: 30px; width: 30px;"></td>
+                                    <td><?= $catalogs[6] ?></td>
+                                    <td><img src="/assets/img/products/<?= $catalogs[5] ?>" style="height: 50px; width: 50px;"></td>
                                     <td>
 
                                         <a class="btn btn-light" href="/admin/modules/catalogs/edit_catalog.php?id=<?= $catalogs[0] ?>"><i class="fas fa-marker"></i>  Редагувати</a>
