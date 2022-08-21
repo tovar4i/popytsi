@@ -287,7 +287,6 @@ nav{
 }
 
 .card-description {
-    /* border: 1px solid gray; */
     background: rgba(255, 255, 255, 0.9);
     width: 50%;
     height: 492px;
@@ -354,7 +353,7 @@ nav{
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
-    
+    text-transform: uppercase;
 }
 
 
@@ -395,7 +394,7 @@ nav{
 }
 
 
-.food a:hover,
+
 .subheader__logo p:hover,
 .menu__item a:hover,
 .menu__item p:hover,

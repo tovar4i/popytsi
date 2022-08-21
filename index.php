@@ -198,6 +198,5 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
 
 
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer-site.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer.php");
 ?>
