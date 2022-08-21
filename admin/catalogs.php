@@ -68,7 +68,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                                     <td><?= $catalogs[1] ?></td>
                                     <td><?= $catalogs[2] ?></td>
                                     <td><?= $catalogs[3] ?></td>
-                                    <td><?= $catalogs[4] ?> г</td>
+                                    <td><?= $catalogs[4] ?></td>
                                     <td><?= $catalogs[6] ?></td>
                                     <td><img src="/assets/img/products/<?= $catalogs[5] ?>" style="height: 50px; width: 50px;"></td>
                                     <td>

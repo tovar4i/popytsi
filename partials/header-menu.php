@@ -52,7 +52,7 @@
                 </p>
             </div>
             <div class="cart">
-                <a href="#">
+                <a href="cart/cart.php">
                     <img src="/assets/icons/cart.png" alt="cart">
                 </a>
             </div>

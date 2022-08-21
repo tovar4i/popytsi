@@ -9,12 +9,25 @@ $amount_catalog = $_POST['amount_catalog'];
 $imageName = '';
 $comments = $_POST['comments'];
 
-if($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
-    $imagename = "/assets/img/products/" . $_FILES['filename']['name'];
+if(!empty($_FILES)) {
+    $uploaddir = $_SERVER['DOCUMENT_ROOT'] . '/assets/img/products/';
     $ext = pathinfo($_FILES['filename']['name']);
     $imageName = $ext['filename'] . "." . $ext['extension'];
-    move_uploaded_file($_FILES['filename']['tmp_name'], $imagename);
+    $uploadfile = $uploaddir . $imageName;
+    // var_dump ($ext);
+    // die();
+    if (!move_uploaded_file($_FILES['filename']['tmp_name'], $uploadfile)) {
+        echo "Можлива атака за допомогою файлового завантаження!\n";
+        die();
+    }
 }
+
+// if($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
+//     $imagename = "/assets/img/products/" . $_FILES['filename']['name'];
+//     $ext = pathinfo($_FILES['filename']['name']);
+//     $imageName = $ext['filename'] . "." . $ext['extension'];
+//     move_uploaded_file($_FILES['filename']['tmp_name'], $imagename);
+// }
 
 mysqli_query($connect, "UPDATE `catalogs` SET `id_composition` = '$id_composition', `id_category` = '$id_category', `price` = '$price', `amount_catalog` = '$amount_catalog', `imagename` = '$imageName', `comments` = '$comments' WHERE `id` = '$id'");
 

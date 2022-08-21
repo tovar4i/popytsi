@@ -32,7 +32,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                     <div class="card-description">
                         <h4 class="card-title"><?= $catalogs[1] ?></h4>
                         <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
-                        <p class="card-weight">Вага:<?= $catalogs[4] ?> г</p>
+                        <p class="card-weight">Вага: <?= $catalogs[4] ?> г</p>
                         <p class="card-price"><?= $catalogs[3] ?> грн</p>
                     </div>
                 
