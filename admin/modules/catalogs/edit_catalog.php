@@ -48,7 +48,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
 
 
                     <form class="user" action="vendor\edit_catalog.php" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?= $catalogs['id'] ?>">
+                        <input type="hidden" name="id" value="<?= $article['id'] ?>">
                         
                         <div class="form-group"> 
                             <p>Назва страви:</p>
@@ -94,7 +94,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/admin/partials/header.php");
                         <div class="form-group">
                             <p>Завантажити зображення:</p>
                             <td><img src="/assets/img/products/<?= $article['imagename'] ?>" style="height: 50px; width: 50px;" ></td>
-                            <input type="file"name="filename" size="10">  
+                            <input type="file"name="filename"  size="10">  
                         </div>
 
                         <button type="submit" class="btn btn-success btn-user btn-block">Зберегти зміни</button>
