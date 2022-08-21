@@ -40,7 +40,7 @@
                                         $result = mysqli_query($connect, $sql);
                                         $user = $result->fetch_assoc();
                     ?>
-                    <span class="username"> <?php echo $user["username"] ?>!</span>
+                    <span style="color:#CF2203" class="username"> <?php echo $user["username"] ?> !</span>
                     <?php
                     } else {
                     ?>

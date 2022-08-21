@@ -88,7 +88,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
     </div>
 </section>
 
-<section class="offers" id="befeates">
+<section class="offers" id="potables">
     <div class="container">
         <div class="title">
             <h3>НАПОЇ</h3>

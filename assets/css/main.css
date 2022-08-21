@@ -2,13 +2,7 @@
 @import url(../fonts/fonts.css);
 @import url(media.css);
 
-/* .wrapper {
-    max-width: 1395px;
-    margin: 0 auto;
-    
-} */
 
-/* header   */
 header{
     position: relative;
 	height: 60px;
@@ -20,7 +14,6 @@ nav{
     background-color: #231F20;
 	z-index: 10;
 }
-
 
 .container,
 .subheader__container{
@@ -213,17 +206,6 @@ nav{
 
 /* cards______________________ */
 
-/* .offers-container {
-    display: grid;
-    grid-template-columns: 320px 320px 320px;
-    grid-template-rows: 528px 528px;
-    column-gap: 96px;
-    row-gap: 70px;
-    margin: 0 auto;
-    justify-content:space-around;
-    
-} */
-
 .offers-container{
     display: grid;
     grid-template-columns: repeat(3, 320px );
@@ -233,8 +215,6 @@ nav{
     row-gap: 70px;
     justify-content:space-around;
     margin: 0 auto;
-    
-    
 }
 
 .card {
@@ -322,6 +302,8 @@ nav{
     
 }
 
+
+
 .about-us-description{
     background: url('/assets/img/aboutUs_bg.jpg') center center/cover no-repeat;
     min-height: 780px;
@@ -357,6 +339,14 @@ nav{
     text-align: center;
 }
 
+
+.food a:hover,
+.subheader__logo p:hover,
+.menu__item a:hover,
+.menu__item p:hover,
+.add-cart a:hover {
+    color: #CF2203;
+}
 
 
 
