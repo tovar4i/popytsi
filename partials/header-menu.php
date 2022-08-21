@@ -10,41 +10,49 @@
                 </a>
             </div>
 
-            <div class="food">
-                <img src="/assets/icons/piza.png" alt="piza">
-                <a href="#piza">Піца</a>
+            <div class="food-piza">
+                <a href="#piza">
+                    <div class="food-img-piza"></div>
+                    <div class="food-title">Піца </div>
+                </a>
             </div>
 
-
-            <div class="food">
-                <img src="/assets/icons/salad.png" alt="salad">
-                <a href="#salads">Салати</a>
+            <div class="food-salads">
+                <a href="#salads">
+                    <div class="food-img-salads"></div>
+                    <div class="food-title">Салати</div>
+                </a>
             </div>
-            <div class="food">
-                <img src="/assets/icons/potables.png" alt="potable">
+
+            <div class="food-potables">
                 <a href="#potables">
-                    Напої</a>
+                    <div class="food-img-potables"></div>
+                    <div class="food-title">Напої</div>
+                </a>
             </div>
-            <div class="food">
-                <img src="/assets/icons/dessert.png" alt="potable">
+
+            <div class="food-deserts">
                 <a href="#deserts">
-                    Десерти</a>
+                    <div class="food-img-deserts"></div>
+                    <div class="food-title">Десерти</div>
+                </a>
             </div>
+
 
             <div class="greeting">
                 <p greeting__title>Привіт,
                     <br>
                     <?php
-                    if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
-                                        $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
-                                        $result = mysqli_query($connect, $sql);
-                                        $user = $result->fetch_assoc();
+                    if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
+                        $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
+                        $result = mysqli_query($connect, $sql);
+                        $user = $result->fetch_assoc();
                     ?>
-                    <span style="color:#CF2203" class="username"> <?php echo $user["username"] ?> !</span>
+                        <span style="color:#CF2203" class="username"> <?php echo $user["username"] ?> !</span>
                     <?php
                     } else {
                     ?>
-                    <span class="username">гість!</span>
+                        <span class="username">гість!</span>
 
                     <?php
                     }
@@ -61,6 +69,3 @@
     </div>
 
 </div>
-        
-
-

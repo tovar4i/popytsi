@@ -80,7 +80,6 @@ nav{
 	height: 90px;
     background-color: #fff;
     z-index: 6;
-    /* border: 1px solid green; */
 }
 
 .subheader__container {
@@ -91,7 +90,7 @@ nav{
     display: flex;
     margin: 0 auto;
     justify-content: space-around;
-    /* border: 1px solid rgb(242, 8, 211); */
+    
 }
 
 .products a {
@@ -108,7 +107,6 @@ nav{
 
 .subheader__logo a {
     display: flex;
-    /* border: 1px solid red; */
     margin-top: 0px;
 }
 
@@ -128,14 +126,18 @@ nav{
     text-transform: uppercase;
 }
 
-.food {
+.food-piza a,
+.food-salads a,
+.food-potables a,
+.food-deserts a {
     display: flex;
-    height: 48px;
+    /* height: 48px; */
     margin-top: 20px;
-    /* border: 1px solid rgb(41, 22, 214); */
+    justify-content: space-between;
+    align-items: center;
 }
 
-.food a {
+.food-title{
     font-family: 'Montserrat';
     color: #231F20;
     font-weight: 800;
@@ -144,6 +146,59 @@ nav{
     margin-bottom: 5px;
     text-align: center;
 }
+
+.food-img-piza{
+    display: block;
+    height: 48px;
+    width: 48px;
+    background: url('../../assets/icons/piza.png') center center/cover no-repeat;
+}
+
+.food-img-salads{
+    display: block;
+    height: 48px;
+    width: 48px;
+    background: url('../icons/salad.png') center center/cover no-repeat;
+}
+.food-img-potables{
+    display: block;
+    height: 48px;
+    width: 48px;
+    background: url('../icons/potables.png') center center/cover no-repeat;
+}
+.food-img-deserts{
+    display: block;
+    height: 48px;
+    width: 48px;
+    background: url('../icons/dessert.png') center center/cover no-repeat;
+}
+
+.food-piza a:hover .food-title,
+.food-salads a:hover .food-title,
+.food-potables a:hover .food-title,
+.food-deserts a:hover .food-title {
+    color: #CF2203;
+}
+
+
+.food-piza a:hover .food-img-piza {
+    background: url('../icons/piza-hover.png') center center/cover no-repeat;
+    
+}
+
+.food-salads a:hover .food-img-salads {
+    background: url('../icons/salad-hover.png') center center/cover no-repeat;
+    
+}
+.food-potables a:hover .food-img-potables {
+    background: url('../icons/potables-hover.png') center center/cover no-repeat;
+    
+}
+.food-deserts a:hover .food-img-deserts {
+    background: url('../icons/dessert-hover.png') center center/cover no-repeat;
+    
+}
+
 
 .greeting {
     height: 90px;
