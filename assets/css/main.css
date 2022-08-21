@@ -173,10 +173,15 @@ nav{
     background: url('../icons/dessert.png') center center/cover no-repeat;
 }
 
+
+.menu__item a:hover,
+.menu__item p:hover,
+.subheader__logo p:hover,
 .food-piza a:hover .food-title,
 .food-salads a:hover .food-title,
 .food-potables a:hover .food-title,
-.food-deserts a:hover .food-title {
+.food-deserts a:hover .food-title, 
+.add-cart a:hover{
     color: #CF2203;
 }
 
