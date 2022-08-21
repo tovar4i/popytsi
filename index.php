@@ -16,16 +16,16 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
             <h3>ПІЦА</h3>
             <div class="underline"> </div>
         </div>
-
-        <?php
+        <div class="offers-container">
+            
+            <?php
             $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 1;");
             $catalogs = mysqli_fetch_all($catalogs);
             // var_dump($catalogs);
             // die();
             foreach ($catalogs as $catalogs) {
-        ?>
-        <div class="offers-container">
-            <div class="card">
+                ?>
+                <div class="card">
                 <div class="card-container">
                     <div class="card-description">
                         <h4 class="card-title"><?= $catalogs[1] ?></h4>
@@ -35,32 +35,75 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                     </div>
                 </div>
                     
-                <img src="/assets/img/products/<?= $catalogs[5] ?>" >
-                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="add-cart" data-id="<?= $catalogs[0] ?>"><i class="fas fa-cart-arrow-down"></i> Замовити </a>
-                    <?php
+                <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
+
+                <div class="add-cart">
+                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                </div> 
+                    
+            </div>
+            <?php
                         }
                     ?>
-            </div>
         </div>
     </div>
 </section>
 
-<!-- <section class="offers" id="befeates">
+<section class="offers" id="salads">
+    <div class="container">
+        <div class="title">
+            <h3>САЛАТИ</h3>
+            <div class="underline"> </div>
+        </div>
+        <div class="offers-container">
+            
+            <?php
+            $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 4;");
+            $catalogs = mysqli_fetch_all($catalogs);
+            // var_dump($catalogs);
+            // die();
+            foreach ($catalogs as $catalogs) {
+                ?>
+                <div class="card">
+                <div class="card-container">
+                    <div class="card-description">
+                        <h4 class="card-title"><?= $catalogs[1] ?></h4>
+                        <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
+                        <p class="card-weight">Вага: <?= $catalogs[4] ?> г</p>
+                        <p class="card-price"><?= $catalogs[3] ?> грн</p>
+                    </div>
+                </div>
+                    
+                <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
+
+                <div class="add-cart">
+                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                </div> 
+                    
+            </div>
+            <?php
+                        }
+                    ?>
+        </div>
+    </div>
+</section>
+
+<section class="offers" id="befeates">
     <div class="container">
         <div class="title">
             <h3>НАПОЇ</h3>
             <div class="underline"> </div>
         </div>
-
-        <?php
+        <div class="offers-container">
+            
+            <?php
             $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 2;");
             $catalogs = mysqli_fetch_all($catalogs);
             // var_dump($catalogs);
             // die();
             foreach ($catalogs as $catalogs) {
-        ?>
-        <div class="offers-container">
-            <div class="card">
+                ?>
+                <div class="card">
                 <div class="card-container">
                     <div class="card-description">
                         <h4 class="card-title"><?= $catalogs[1] ?></h4>
@@ -70,17 +113,58 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                     </div>
                 </div>
                     
-                <img src="/assets/img/products/<?= $catalogs[5] ?>" >
-                <a href="?cart=add&id=<?= $catalogs[0] ?>" class="add-cart" data-id="<?= $catalogs[0] ?>"><i class="fas fa-cart-arrow-down"></i> Замовити </a>
-                    <?php
+                <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
+
+                <div class="add-cart">
+                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                </div> 
+                    
+            </div>
+            <?php
                         }
                     ?>
-            </div>
         </div>
     </div>
-</section> -->
+</section>
 
+<section class="offers" id="deserts">
+    <div class="container">
+        <div class="title">
+            <h3>ДЕСЕРТИ</h3>
+            <div class="underline"> </div>
+        </div>
+        <div class="offers-container">
+            
+            <?php
+            $catalogs = mysqli_query($connect, "SELECT catalogs.id, composition, category, price, amount_catalog, imagename, comments FROM (catalogs JOIN category ON id_category = category.id) JOIN composition ON id_composition = composition.id WHERE id_category = 3;");
+            $catalogs = mysqli_fetch_all($catalogs);
+            // var_dump($catalogs);
+            // die();
+            foreach ($catalogs as $catalogs) {
+                ?>
+                <div class="card">
+                <div class="card-container">
+                    <div class="card-description">
+                        <h4 class="card-title"><?= $catalogs[1] ?></h4>
+                        <p class="card-subtitle"> <?=$catalogs[6] ?> </p>
+                        <p class="card-weight">Вага: <?= $catalogs[4] ?> г</p>
+                        <p class="card-price"><?= $catalogs[3] ?> грн</p>
+                    </div>
+                </div>
+                    
+                <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
 
+                <div class="add-cart">
+                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                </div> 
+                    
+            </div>
+            <?php
+                        }
+                    ?>
+        </div>
+    </div>
+</section>
 
 
 
