@@ -38,7 +38,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
                 
                 <div class="add-cart">
-                    <a class="btn-title" href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>">Замовити</a>
+                    <!-- <a class="btn-title" href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>">Замовити</a> -->
+                    <a class="btn-title" href="/cart/vendor/add_to_card.php?&action=add&id=<?= $catalogs[0] ?>">Add to cart</a>
                 </div> 
                     
             </div>
