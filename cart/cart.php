@@ -61,7 +61,7 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
             
 } else{ 
     
-    $sql="SELECT catalogs.id, composition, price, amount_catalog, imagename, comments FROM (catalogs JOIN composition ON id_composition = composition.id) WHERE catalogs.id IN ("; 
+    $sql="SELECT catalogs.id, composition, price, amount_catalog, imagename, comments, id_composition FROM (catalogs JOIN composition ON id_composition = composition.id) WHERE catalogs.id IN ("; 
     // $sql="SELECT * FROM catalogs WHERE id IN ("; 
                         
     foreach($_SESSION['users_cart'] as $id => $value) { 
@@ -85,6 +85,7 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
 
                     <td>
                         <div>
+                        <input type="hidden" name="id_composition" value="<?= $row['id_composition'] ?>">
                             <input type="hidden" name="composition" value="<?= $row['composition'] ?>">
                             <span><?php echo $row['composition'] ?></span>
                         </div>
@@ -103,7 +104,13 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
                     </td>
                     
                     <td><?php echo $_SESSION['users_cart'][$row['id']]['quantity']*$row['price'] ?>&#8372;</td>
+                    
+                    
                     <?php 
+                      $_SESSION['composition'] = $row['id_composition'];
+                      $_SESSION['quantity'] = $_SESSION['users_cart'][$row['id']]['quantity'];
+                      $_SESSION['price'] = $row['price'];
+                      $_SESSION['subtotal'] = $subtotal;
                     }}
                     ?> 
                 </tr>
