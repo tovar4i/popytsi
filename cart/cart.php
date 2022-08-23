@@ -1,6 +1,12 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/header.php");
-require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
+
+if(empty($_SESSION["user_id"])) {
+    header("Location: /");
+  } else {
+    require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
+  }
+
 
 ?>
 <?php 
@@ -20,34 +26,43 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-top.php");
 
 
 
-<div class="container" style="padding: 100px;">
+<div class="container" style="padding: 150px; text-align: center;">
 
 
-    <h2>Кошик</h2>
+    <!-- <h2>Кошик</h2> -->
 
 <?php 
     if(isset($message)){ 
         echo "<h3>$message</h3>"; 
     } 
-    echo print_r($_SESSION['users_cart']);
+    // echo print_r($_SESSION['users_cart']);
+    // echo ($_SESSION["user_id"]);
 ?>
 
 
 
-    <div style="padding-top: 50px;">
-        <h3 style="padding-bottom: 50px;">Ваше замовлення</h3>
+    <div style="padding-top: 50px; text-align: center;">
+        <h2 style="font-size: 24px; font-weight: 600; text-align: center;">Ваше замовлення</h2>
       
-    <form method="post" action="#">     
-        <table id="tableDisplay" class="table">
+    <form method="post" action="#" >     
+        <table id="tableDisplay" class="table" style="margin: 10px auto;">
             <thead>
                 <tr>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                </tr>    
+            <!-- <tr>
                     <th>Фото страви</th>
                     <th>Назва страви</th>
                     <th>Ціна</th>
                     <th>Кількість</th>
                     <th>Сума</th>
                     <th>&nbsp;</th>
-                </tr>
+                </tr> -->
             </thead>
 <?php
 if(!isset($_SESSION['users_cart'])){ 
@@ -79,8 +94,8 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
             <tbody>
                 <tr>
 
-                    <td style="padding-top: 50px;">
-                        <img src="/assets/img/products/<?php echo $row['imagename'] ?>"  style="height: 50px; width: 50px; background-size: cover; background-repeat: no-repeat;">
+                    <td>
+                        <img src="/assets/img/products/<?php echo $row['imagename'] ?>"  style="height: 50px; width: 50px; background-size: cover; background-repeat: no-repeat; margin: 20px auto;">
                     </td>
 
                     <td>
@@ -116,18 +131,13 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
                 </tr>
                 
                 <tr>
-                <td colspan="7">Сума замовлення: <?php echo $totalprice ?>&#8372;</td>
+                <td style="font-size: 20px; padding-top: 50px;" colspan="7">Сума замовлення: <?php echo $totalprice ?>&#8372;</td>
                 </tr>
 
-                    <!-- <td>
-                        <button type="button" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true"></i>X</span>
-                        </button>
-                    </td> -->
                 <tr>
-                <td colspan="7">
-                    <p>Щоб видалити страву, встановіть її кількість на 0. </p>
-                    <p>Щоб зміни по кількості були внесені тицяйте.</p>
+                <td colspan="7" style="font-size: 16px;">
+                    <p style="padding-top: 50px;">Щоб видалити страву, встановіть її кількість на 0. </p>
+                    <p style="padding-top: 10px;">Щоб зміни по кількості були внесені тицяйте "Оновити дані".</p>
                     <button class="btnLog-in-out" type="submit" name="updateOrder" >Оновити дані</button> 
                 </td>
                 </tr> 
@@ -139,11 +149,9 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
 
     
     </form> 
+    <div style="padding-top: 50px;"></div>
 
-<?php 
-    echo print_r($user_id);
-?>
-    <button class="btnLog-admin" type="button" onclick="window.location.href='/'">Повернутись до магазину</button>
+    <button  class="btnLog-admin" type="button" onclick="window.location.href='/'">Повернутись до магазину</button>
  
     <button class="btnLog-admin" type="submit" name="toOrder" onclick="window.location.href='/cart/vendor/add_order.php'">Оформити замовлення</button>   
 
@@ -152,6 +160,6 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
 
 
 
-<?php
+<!-- <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/partials/footer.php");
-?>
+?> -->

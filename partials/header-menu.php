@@ -2,7 +2,7 @@
     <div class="subheader__container">
         <div class="products">
             <div class="subheader__logo">
-                <a href="#">
+                <a href="/">
                     <img src="/assets/icons/logo.png" alt="">
                     <p>POPYTSI
                         <br><span> "Вмажемо по пицці?!"</span>
@@ -40,31 +40,31 @@
 
 
             <div class="greeting">
-                <p greeting__title>Привіт,
-                    <br>
-                    <?php
-                    if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
-                        $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
-                        $result = mysqli_query($connect, $sql);
-                        $user = $result->fetch_assoc();
-                    ?>
-                        <span style="color:#CF2203" class="username"> <?php echo $user["username"] ?> !</span>
-                    <?php
-                    } else {
-                    ?>
-                        <span class="username">гість!</span>
+                <div class="greetingInfo">    
+                    <p>Привіт,
+                        <?php
+                        if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] != null) {
+                            $sql = "SELECT * FROM users WHERE id =" . $_SESSION["user_id"];
+                            $result = mysqli_query($connect, $sql);
+                            $user = $result->fetch_assoc();
+                        ?>
+                            <br><span style="color:#CF2203" class="username"> <?php echo $user["username"] ?> !</span>
+                        <?php
+                        } else {
+                        ?>
+                            <span class="username">гість!</span> <br> <span style="color:#CF2203">Зареєструйся,</span><br>щоб замовити!
 
-                    <?php
-                    }
-                    ?>
-                </p>
-            </div>
-            <div class="cart">
+                        <?php
+                        }
+                        ?>
+                    </p>
+                </div>
+            
                 <a href="cart/cart.php">
-                    <!-- <img src="/assets/icons/cart.png" alt="cart"> -->
                     <div class="cart-image"></div>
                 </a>
-            </div>
+           
+        </div>
         </div>
 
     </div>

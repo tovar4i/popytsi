@@ -10,10 +10,10 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
     </div>
 </section>
 
-<section class="offers" id="piza">
-    <div class="container">
+<section id="piza" class="offers">
+    <div  class="container">
         <div class="title">
-            <h3>ПІЦА</h3>
+            <h3 >ПІЦА</h3>
             <div class="underline"> </div>
         </div>
         <div class="offers-container">
@@ -39,7 +39,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 
                 <div class="add-cart">
                     <!-- <a class="btn-title" href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>">Замовити</a> -->
-                    <a class="btn-title" href="/cart/vendor/add_to_card.php?&action=add&id=<?= $catalogs[0] ?>">Add to cart</a>
+                    <a class="btn-title" href="/cart/vendor/add_to_card.php?&action=add&id=<?= $catalogs[0] ?>">Додати у кошик</a>
                 </div> 
                     
             </div>
@@ -78,7 +78,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
 
                 <div class="add-cart">
-                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                    <!-- <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a> -->
+                    <a class="btn-title" href="/cart/vendor/add_to_card.php?&action=add&id=<?= $catalogs[0] ?>">Додати у кошик</a>
                 </div> 
                     
             </div>
@@ -117,7 +118,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
 
                 <div class="add-cart">
-                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                    <!-- <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a> -->
+                    <a class="btn-title" href="/cart/vendor/add_to_card.php?&action=add&id=<?= $catalogs[0] ?>">Додати у кошик</a>
                 </div> 
                     
             </div>
@@ -156,7 +158,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/partials/header-menu.php");
                 <img class="card-image" src="/assets/img/products/<?= $catalogs[5] ?>" >
 
                 <div class="add-cart">
-                    <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a>
+                    <!-- <a href="?cart=add&id=<?= $catalogs[0] ?>" data-id="<?= $catalogs[0] ?>"><i class=""></i> Замовити </a> -->
+                    <a class="btn-title" href="/cart/vendor/add_to_card.php?&action=add&id=<?= $catalogs[0] ?>">Додати у кошик</a>
                 </div> 
                     
             </div>

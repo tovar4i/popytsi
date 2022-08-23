@@ -89,8 +89,9 @@ nav{
 .products {
     display: flex;
     margin: 0 auto;
-    justify-content: space-around;
-    
+    /* justify-content: space-around; */
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .products a {
@@ -98,7 +99,7 @@ nav{
     font-size: 24px;
     font-weight: 800;
     text-align: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .subheader__logo {
@@ -107,14 +108,14 @@ nav{
 
 .subheader__logo a {
     display: flex;
-    margin-top: 0px;
+    align-items: center;
 }
 
 .subheader__logo p {
     font-family: 'Mochiy Pop One';
     font-size: 38px;
-    padding: 13px;
-    text-align: left;
+    /* padding: 13px; */
+    /* text-align: left; */
     color: #231F20;
 }
 
@@ -132,8 +133,8 @@ nav{
 .food-deserts a {
     display: flex;
     /* height: 48px; */
-    margin-top: 20px;
-    justify-content: space-between;
+    /* margin-top: 20px; */
+    /* justify-content: space-between; */
     align-items: center;
 }
 
@@ -143,7 +144,7 @@ nav{
     font-weight: 800;
     font-size: 24px;
     padding-left: 17px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     text-align: center;
 }
 
@@ -208,35 +209,31 @@ nav{
 .greeting {
     height: 90px;
     /* border: 1px solid rgb(41, 22, 214); */
+    display: flex;
+    align-items: center;
 }
 
 .greeting p,
 .greeting span {
-    padding-top: 25px;
+    /* padding-top: 25px; */
     font-weight: 700;
     font-size: 14px;
-    text-align: right;
+    text-align: center;
     line-height: 18px;
     color: #0E0C0D;
 }
-
-.username {
-    
-}
-
-.cart {
-    height: 48px;
-    padding-right: 15px;
-    padding-top: 15px;
+.greeting p {
+    padding-right: 17px;
 }
 
 .cart-image{
-    height: 42px;
-    width: 36px;
+    display: block;
+    height: 48px;
+    width: 48px;
     background: url('../icons/cart.png') center center/cover no-repeat;
 }
 
-.cart :hover {
+.greeting a:hover .cart-image {
     background: url('../icons/cart-hover.png') center center/cover no-repeat;
     
 }
