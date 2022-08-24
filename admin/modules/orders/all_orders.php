@@ -21,9 +21,9 @@
                         <th>ID</th>
                         <th>Ім'я користувача</th>
                         <th>Телефон</th>
-                        <th>E-mail</th>
-                        <th>Роль</th>
-                        <th>Пароль</th>
+                        <th>Назва страви</th>
+                        <th>Кількість страв</th>
+                        <th>Сумма замовлення</th>
                         <th>Опції</th>
                     </tr>
                 </thead>
@@ -32,23 +32,21 @@
 
                     <?php 
                         // виводимо всі дані окрім того, чия зараз сессія (адміна)
-                        $sql = "SELECT * FROM users WHERE id !=" . $userID;
-                        $result = mysqli_query($connect, $sql); 
-                        // var_dump($result);
-                        while($row = $result->fetch_assoc()) // отримуємо всі рядки в циклі по одному
-                        {
+                        $users_cart = mysqli_query($connect, "SELECT users_cart.id, username, phone, composition, quantity, price FROM (users_cart JOIN users ON id_users = users.id) JOIN composition ON id_composition = composition.id;");
+                        $users_cart = mysqli_fetch_all($users_cart);
+                        foreach ($users_cart as $users_cart) {
                     ?> 
 
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['phone']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['role']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
+                        <td><?php echo $users_cart[0] ?></td>
+                        <td><?php echo $users_cart[1] ?></td>
+                        <td><?php echo $users_cart[2] ?></td>
+                        <td><?php echo $users_cart[3] ?></td>
+                        <td><?php echo $users_cart[4] ?></td>
+                        <td><?php echo $users_cart[5] ?></td>
                         <td>
-                            <a class="btn btn-light" href="?page=edit_user&id=<?php echo $row['id']; ?>"><i class="fas fa-marker"></i>  Редагувати</a>
-                            <a class="btn btn-dark" href="/admin/modules/users/delete_user.php?id=<?php echo $row['id']; ?>">
+                          <!--   <a class="btn btn-light" href="?page=edit_user&id=<?php echo $row['id']; ?>"><i class="fas fa-marker"></i>  Редагувати</a>  -->
+                            <a class="btn btn-dark" href="/admin/modules/orders/delete_orders.php?id=<?= $users_cart[0] ?>">
                             <i class="fas fa-trash-alt"></i>  Видалити</a>
                         </td>
                     </tr>

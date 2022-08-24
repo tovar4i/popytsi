@@ -215,7 +215,7 @@ nav{
 
 .greeting p,
 .greeting span {
-    /* padding-top: 25px; */
+     padding-top: 25px;
     font-weight: 700;
     font-size: 14px;
     text-align: center;

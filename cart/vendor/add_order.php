@@ -12,7 +12,7 @@ $price = $_SESSION['subtotal'];
 
 mysqli_query($connect,"INSERT INTO `users_cart` (`id`, `id_users`, `id_composition`, `quantity`, `price`) VALUES (NULL, '$id_users', '$composition', '$quantity', '$price')");
 
-
+unset($_SESSION['users_cart']);
 header("Location: /cart/order_success.php");
 
 

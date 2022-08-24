@@ -86,6 +86,7 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
     $sql=substr($sql, 0, -1).") ORDER BY id ASC"; 
     $query=mysqli_query($connect, $sql); 
     $totalprice=0; 
+    if(mysqli_query($connect,$sql)!=0){
     while($row=mysqli_fetch_array($query)){ 
 
         $subtotal=$_SESSION['users_cart'][$row['id']]['quantity']*$row['price']; 
@@ -126,7 +127,7 @@ echo "<p>Ваш кошик порожній. Час вмазати по пиці
                       $_SESSION['quantity'] = $_SESSION['users_cart'][$row['id']]['quantity'];
                       $_SESSION['price'] = $row['price'];
                       $_SESSION['subtotal'] = $subtotal;
-                    }}
+                    }}}
                     ?> 
                 </tr>
                 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Сер 22 2022 р., 23:38
--- Версія сервера: 10.4.24-MariaDB
--- Версія PHP: 8.1.6
+-- Время создания: Авг 23 2022 г., 17:37
+-- Версия сервера: 10.4.24-MariaDB
+-- Версия PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База даних: `pizzazher`
+-- База данных: `pizzazher`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `catalogs`
+-- Структура таблицы `catalogs`
 --
 
 CREATE TABLE `catalogs` (
@@ -38,7 +38,7 @@ CREATE TABLE `catalogs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `catalogs`
+-- Дамп данных таблицы `catalogs`
 --
 
 INSERT INTO `catalogs` (`id`, `id_composition`, `id_category`, `price`, `amount_catalog`, `imagename`, `comments`) VALUES
@@ -64,7 +64,7 @@ INSERT INTO `catalogs` (`id`, `id_composition`, `id_category`, `price`, `amount_
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `category`
+-- Структура таблицы `category`
 --
 
 CREATE TABLE `category` (
@@ -73,7 +73,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `category`
+-- Дамп данных таблицы `category`
 --
 
 INSERT INTO `category` (`id`, `category`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `category` (`id`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `composition`
+-- Структура таблицы `composition`
 --
 
 CREATE TABLE `composition` (
@@ -94,7 +94,7 @@ CREATE TABLE `composition` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `composition`
+-- Дамп данных таблицы `composition`
 --
 
 INSERT INTO `composition` (`id`, `composition`) VALUES
@@ -120,7 +120,7 @@ INSERT INTO `composition` (`id`, `composition`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `final`
+-- Структура таблицы `final`
 --
 
 CREATE TABLE `final` (
@@ -135,7 +135,7 @@ CREATE TABLE `final` (
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `measurement`
+-- Структура таблицы `measurement`
 --
 
 CREATE TABLE `measurement` (
@@ -144,7 +144,7 @@ CREATE TABLE `measurement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `measurement`
+-- Дамп данных таблицы `measurement`
 --
 
 INSERT INTO `measurement` (`id`, `measurement`) VALUES
@@ -155,7 +155,7 @@ INSERT INTO `measurement` (`id`, `measurement`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `products`
+-- Структура таблицы `products`
 --
 
 CREATE TABLE `products` (
@@ -167,16 +167,59 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `products`
+-- Дамп данных таблицы `products`
 --
 
 INSERT INTO `products` (`id`, `products_name`, `measurement_id`, `amount`, `price`) VALUES
-(27, 'тісто', 1, 1, 1);
+(1, 'борошно', 1, 5, 40),
+(2, 'сухарики', 1, 2, 50),
+(3, 'кунжут', 1, 1, 73),
+(4, 'соус пікантний гірчичний', 2, 2, 40),
+(5, 'соус вершковий ', 2, 0.5, 30),
+(6, 'соус томатний', 2, 0.9, 57),
+(7, 'соус песто', 2, 1.5, 130),
+(8, 'соус цезар', 2, 0.7, 42),
+(9, 'соус унагі', 2, 1.3, 160),
+(10, 'сир моцарела', 1, 3, 133),
+(11, 'сир пармезан', 1, 3.2, 152),
+(12, 'сир філадельфія', 1, 2.3, 143),
+(13, 'сир рікота', 1, 3.2, 172),
+(14, 'сир дорблю', 1, 2.8, 274),
+(15, 'ковбаски баварські', 1, 3.6, 85),
+(16, 'шинка', 1, 2.4, 200),
+(17, 'лосось', 1, 1.4, 360),
+(18, 'вугор', 1, 3.5, 455),
+(19, 'куряче філе', 1, 2.7, 430),
+(20, 'перепелині яйця', 3, 20, 40),
+(21, 'помідори', 1, 4.2, 60),
+(22, 'помідори чері', 1, 3.2, 82),
+(23, 'печериці', 1, 2.6, 260),
+(24, 'рукола', 1, 1.3, 75),
+(25, 'салат айсберг', 1, 1.3, 132),
+(26, 'свіжа зелень', 1, 2.1, 150),
+(27, 'авокадо', 1, 1.8, 120),
+(28, 'броколі', 1, 1.6, 153),
+(29, 'перець болгарський', 1, 1.5, 137),
+(30, 'цибуля синя', 1, 2.5, 174),
+(31, 'маслини', 1, 1.8, 189),
+(32, 'грецький горіх', 1, 2.3, 233),
+(33, 'Яблучний сік', 3, 44, 240),
+(34, 'Вишневий нектар', 3, 52, 166),
+(35, 'Апельсиновий нектар', 3, 32, 147),
+(36, 'Персиковий нектар', 3, 48, 178),
+(37, 'Coca-Cola', 3, 62, 218),
+(38, 'Томатний сік', 3, 39, 178),
+(39, 'молоко', 2, 6, 450),
+(40, 'яйце', 3, 40, 120),
+(41, 'дріжді', 1, 1.7, 145),
+(42, 'кокосова стружка', 1, 1.6, 265),
+(43, 'чорний шоколад', 1, 1.4, 234),
+(44, 'маршмелоу', 1, 2.4, 264);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `ttk`
+-- Структура таблицы `ttk`
 --
 
 CREATE TABLE `ttk` (
@@ -185,10 +228,114 @@ CREATE TABLE `ttk` (
   `products_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `ttk`
+--
+
+INSERT INTO `ttk` (`id`, `id_composition`, `products_id`) VALUES
+(5, 12, 1),
+(6, 12, 40),
+(7, 12, 41),
+(8, 12, 4),
+(9, 12, 10),
+(10, 12, 15),
+(11, 12, 21),
+(12, 12, 23),
+(13, 12, 24),
+(14, 13, 1),
+(15, 13, 41),
+(16, 13, 40),
+(17, 13, 5),
+(18, 13, 10),
+(19, 13, 16),
+(20, 13, 21),
+(21, 13, 20),
+(22, 13, 11),
+(23, 13, 24),
+(24, 14, 1),
+(25, 14, 41),
+(26, 14, 40),
+(27, 14, 6),
+(28, 14, 10),
+(29, 14, 17),
+(30, 14, 27),
+(31, 14, 7),
+(32, 14, 12),
+(33, 14, 26),
+(34, 15, 1),
+(35, 15, 41),
+(36, 15, 40),
+(37, 15, 6),
+(38, 15, 10),
+(39, 15, 28),
+(40, 15, 29),
+(41, 15, 30),
+(42, 15, 31),
+(43, 15, 24),
+(44, 16, 1),
+(45, 16, 41),
+(46, 16, 40),
+(47, 16, 5),
+(48, 16, 10),
+(49, 16, 11),
+(50, 16, 13),
+(51, 16, 14),
+(52, 16, 32),
+(53, 16, 24),
+(54, 17, 1),
+(55, 17, 41),
+(56, 17, 40),
+(57, 17, 5),
+(58, 17, 10),
+(59, 17, 16),
+(60, 17, 19),
+(61, 17, 23),
+(62, 17, 30),
+(63, 17, 21),
+(64, 17, 24),
+(65, 18, 25),
+(66, 18, 22),
+(67, 18, 20),
+(68, 18, 2),
+(69, 18, 17),
+(70, 18, 8),
+(71, 18, 11),
+(72, 19, 25),
+(73, 19, 22),
+(74, 19, 20),
+(75, 19, 2),
+(76, 19, 19),
+(77, 19, 8),
+(78, 19, 11),
+(79, 20, 25),
+(80, 20, 18),
+(81, 20, 27),
+(82, 20, 22),
+(83, 20, 3),
+(84, 20, 9),
+(85, 21, 33),
+(86, 22, 34),
+(87, 23, 35),
+(88, 24, 36),
+(89, 25, 37),
+(90, 26, 38),
+(91, 27, 1),
+(92, 27, 41),
+(93, 27, 40),
+(94, 27, 42),
+(95, 28, 1),
+(96, 28, 41),
+(97, 28, 40),
+(98, 28, 43),
+(99, 29, 1),
+(100, 29, 41),
+(101, 29, 40),
+(102, 29, 44);
+
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
@@ -201,19 +348,20 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `phone`, `role`) VALUES
 (1, 'admin', 'admin@mail.ua', '1111', '000', 'admin'),
 (4, 'Кузя', 'fdkjf@df', '555', '6644444444', 'admin'),
 (5, 'Тетяна', 'myyyyy@h', '555', '6644444444', 'uzer'),
-(7, 'Тетяна', 'myyyyy@h', '66666', '6644444444', 'uzer');
+(7, 'Тетяна', 'myyyyy@h', '66666', '6644444444', 'uzer'),
+(8, 'olecsandr', 'sany00ksenz@gmail.com', 'san1a00ksenz', '0632235132', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `users_cart`
+-- Структура таблицы `users_cart`
 --
 
 CREATE TABLE `users_cart` (
@@ -225,11 +373,25 @@ CREATE TABLE `users_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Індекси збережених таблиць
+-- Дамп данных таблицы `users_cart`
+--
+
+INSERT INTO `users_cart` (`id`, `id_users`, `id_composition`, `quantity`, `price`) VALUES
+(1, 4, 25, 1, '1.00'),
+(2, 5, 13, 2, '180.00'),
+(3, 5, 13, 4, '180.00'),
+(4, 5, 13, 5, '180.00'),
+(5, 5, 12, 3, '180.00'),
+(6, 5, 12, 3, '540.00'),
+(7, 5, 13, 5, '900.00'),
+(8, 5, 13, 5, '900.00');
+
+--
+-- Индексы сохранённых таблиц
 --
 
 --
--- Індекси таблиці `catalogs`
+-- Индексы таблицы `catalogs`
 --
 ALTER TABLE `catalogs`
   ADD PRIMARY KEY (`id`),
@@ -237,39 +399,39 @@ ALTER TABLE `catalogs`
   ADD KEY `id_composition` (`id_composition`);
 
 --
--- Індекси таблиці `category`
+-- Индексы таблицы `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `composition`
+-- Индексы таблицы `composition`
 --
 ALTER TABLE `composition`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `final`
+-- Индексы таблицы `final`
 --
 ALTER TABLE `final`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_users` (`id_users`);
 
 --
--- Індекси таблиці `measurement`
+-- Индексы таблицы `measurement`
 --
 ALTER TABLE `measurement`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `products`
+-- Индексы таблицы `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `measurement_id` (`measurement_id`);
 
 --
--- Індекси таблиці `ttk`
+-- Индексы таблицы `ttk`
 --
 ALTER TABLE `ttk`
   ADD PRIMARY KEY (`id`),
@@ -277,13 +439,13 @@ ALTER TABLE `ttk`
   ADD KEY `ttk_ibfk_2` (`id_composition`);
 
 --
--- Індекси таблиці `users`
+-- Индексы таблицы `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `users_cart`
+-- Индексы таблицы `users_cart`
 --
 ALTER TABLE `users_cart`
   ADD PRIMARY KEY (`id`),
@@ -291,95 +453,95 @@ ALTER TABLE `users_cart`
   ADD KEY `id_users` (`id_users`);
 
 --
--- AUTO_INCREMENT для збережених таблиць
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT для таблиці `catalogs`
+-- AUTO_INCREMENT для таблицы `catalogs`
 --
 ALTER TABLE `catalogs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT для таблиці `category`
+-- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблиці `composition`
+-- AUTO_INCREMENT для таблицы `composition`
 --
 ALTER TABLE `composition`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT для таблиці `final`
+-- AUTO_INCREMENT для таблицы `final`
 --
 ALTER TABLE `final`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблиці `measurement`
+-- AUTO_INCREMENT для таблицы `measurement`
 --
 ALTER TABLE `measurement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблиці `products`
+-- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT для таблиці `ttk`
+-- AUTO_INCREMENT для таблицы `ttk`
 --
 ALTER TABLE `ttk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
--- AUTO_INCREMENT для таблиці `users`
+-- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблиці `users_cart`
+-- AUTO_INCREMENT для таблицы `users_cart`
 --
 ALTER TABLE `users_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Обмеження зовнішнього ключа збережених таблиць
+-- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Обмеження зовнішнього ключа таблиці `catalogs`
+-- Ограничения внешнего ключа таблицы `catalogs`
 --
 ALTER TABLE `catalogs`
   ADD CONSTRAINT `catalogs_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`),
   ADD CONSTRAINT `catalogs_ibfk_2` FOREIGN KEY (`id_composition`) REFERENCES `composition` (`id`);
 
 --
--- Обмеження зовнішнього ключа таблиці `final`
+-- Ограничения внешнего ключа таблицы `final`
 --
 ALTER TABLE `final`
   ADD CONSTRAINT `final_ibfk_1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`);
 
 --
--- Обмеження зовнішнього ключа таблиці `products`
+-- Ограничения внешнего ключа таблицы `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`measurement_id`) REFERENCES `measurement` (`id`);
 
 --
--- Обмеження зовнішнього ключа таблиці `ttk`
+-- Ограничения внешнего ключа таблицы `ttk`
 --
 ALTER TABLE `ttk`
-  ADD CONSTRAINT `ttk_ibfk_1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `ttk_ibfk_2` FOREIGN KEY (`id_composition`) REFERENCES `composition` (`id`);
+  ADD CONSTRAINT `ttk_ibfk_1` FOREIGN KEY (`id_composition`) REFERENCES `composition` (`id`),
+  ADD CONSTRAINT `ttk_ibfk_2` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`);
 
 --
--- Обмеження зовнішнього ключа таблиці `users_cart`
+-- Ограничения внешнего ключа таблицы `users_cart`
 --
 ALTER TABLE `users_cart`
   ADD CONSTRAINT `users_cart_ibfk_1` FOREIGN KEY (`id_composition`) REFERENCES `composition` (`id`),
